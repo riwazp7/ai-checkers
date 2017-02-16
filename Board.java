@@ -9,5 +9,7 @@ public class Board implements BoardInterface {
         return null;
     }
 
-
+    public String[][] board() {
+        return null;
+    }
 }

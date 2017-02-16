@@ -4,7 +4,11 @@ import java.util.ArrayList;
  * Created by Riwaz on 2/16/17.
  */
 public interface BoardInterface {
+    ArrayList<Piece> redPieces = null;
+    ArrayList<Piece> blackPieces = null;
+    ArrayList<Board> possibleMoves();
+    boolean redsTurn = false;
 
-    public ArrayList<Board> possibleMoves();
+    String[][] board();
 
 }
