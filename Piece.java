@@ -5,6 +5,8 @@ public class Piece implements PieceInterface {
 
     protected Board board;
     protected Coor coor;
+    protected boolean isKing;
+    protected boolean isRed;
 
     public Piece(Board board, Coor coor) {
         this.board = board;

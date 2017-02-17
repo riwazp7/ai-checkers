@@ -39,4 +39,12 @@ public class Coor {
         if (c.getY() - 1 >= 0) result.add(new Coor(c.getX(), c.getY() - 1));
         return result;
     }
+
+    /**
+     *
+     * TEST CODE
+     */
+    public static void main(String[] args) {
+
+    }
 }

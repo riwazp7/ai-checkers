@@ -51,4 +51,22 @@ public class Board implements BoardInterface {
     public boolean getTurn() {
         return this.redsTurn;
     }
+
+    public static Board getStartBoard() {
+
+    }
+
+    @Override
+    public String toString() {
+        String res = "";
+        for(int i = 0; i < Params.MAX_ROW; i++) {
+            for (int j = 0; j < Params.MAX_COL; j++) {
+                if (boardArr[i][j] == null ) res += "X";
+                else {
+                    boardArr[i][j].
+                }
+            }
+            res += "\n";
+        }
+    }
 }
