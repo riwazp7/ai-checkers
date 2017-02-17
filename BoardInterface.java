@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public interface BoardInterface {
     ArrayList<Piece> redPieces = null;
     ArrayList<Piece> blackPieces = null;
-    ArrayList<Board> possibleMoves();
     boolean redsTurn = false;
 
+    ArrayList<Board> possibleMoves();
     String[][] board();
 
 }
