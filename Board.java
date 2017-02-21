@@ -53,7 +53,7 @@ public class Board implements BoardInterface {
     }
 
     public static Board getStartBoard() {
-
+        return null;
     }
 
     @Override
@@ -63,10 +63,11 @@ public class Board implements BoardInterface {
             for (int j = 0; j < Params.MAX_COL; j++) {
                 if (boardArr[i][j] == null ) res += "X";
                 else {
-                    boardArr[i][j].
+                    res += boardArr[i][j].toString();
                 }
             }
             res += "\n";
         }
+        return res;
     }
 }
