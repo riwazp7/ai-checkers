@@ -5,5 +5,6 @@ public class RedPiece extends Piece {
 
     public RedPiece(Board board, RedPiece redPiece) {
         super(board, redPiece);
+        isRed = true;
     }
 }

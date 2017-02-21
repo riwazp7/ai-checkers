@@ -40,6 +40,18 @@ public class Coor {
         return result;
     }
 
+    // returns true iff coor1 is diagonal to coor2 and they are adjacent (no another diagonal coor)
+    public static boolean isDiagonalTo(Coor coor1, Coor coor2) {
+        if ((java.lang.Math.abs(coor1.getX() - coor2.getX()) == 1) && (java.lang.Math.abs(coor1.getY() - coor2.getY()) == 1)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static Coor getCenterCoor(Coor coor1, Coor coor2) {
+        return new Coor((coor1.getX() + coor2.getX())/2, (coor1.getY() + coor2.getY())/2);
+    }
+
     /**
      *
      * TEST CODE

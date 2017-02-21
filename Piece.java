@@ -5,7 +5,7 @@ public class Piece implements PieceInterface {
 
     protected Board board;
     protected Coor coor;
-    protected boolean isKing;
+    protected boolean isKing = false;
     protected boolean isRed;
 
     public Piece(Board board, Coor coor) {
@@ -16,6 +16,17 @@ public class Piece implements PieceInterface {
     public Piece(Board board, Piece piece) {
         this.board = board;
         this.coor = piece.getCoor();
+        if (piece.isKing()) {
+            this.makeKing();
+        }
+    }
+
+    public void makeKing() {
+        this.isKing = true;
+    }
+
+    public boolean isKing() {
+        return isKing;
     }
 
     public Coor getCoor() {

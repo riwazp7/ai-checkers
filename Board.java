@@ -31,6 +31,26 @@ public class Board implements BoardInterface {
         return null;
     }
 
+    public void removePiece(Coor coor) {
+        Piece piece = boardArr[coor.getX()][coor.getY()];
+        boardArr[coor.getX()][coor.getY()] = null;
+        if (piece instanceof RedPiece) {
+            redPieces.remove(piece);
+        } else {
+            blackPieces.remove(piece);
+        }
+    }
+
+    public void addPiece(Coor coor, Piece piece) {
+        boardArr[coor.getX()][coor.getY()] = piece;
+        if (piece instanceof RedPiece) redPieces.add(piece);
+        else blackPieces.add(piece);
+    }
+
+    public void changeTurn() {
+        redsTurn = !redsTurn;
+    }
+
     @Deprecated
     public String[][] board() {
         return null;
