@@ -36,4 +36,8 @@ public class Piece implements PieceInterface {
     public Board getBoard() {
         return this.board;
     }
+
+    public boolean hasToMove() {
+
+    }
 }

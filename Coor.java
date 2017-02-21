@@ -4,6 +4,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Coor {
 
@@ -31,7 +32,7 @@ public class Coor {
         return (this.X == coor.getX() && this.Y == coor.getY());
     }
 
-    public static ArrayList<Coor> getAdjacentCoors(Coor c) {
+    public static List<Coor> getAdjacentCoors(Coor c) {
         ArrayList<Coor> result = new ArrayList<>();
         if (c.getX() + 1 < Params.MAX_ROW) result.add(new Coor(c.getX() + 1, c.getY()));
         if (c.getX() - 1 >= 0) result.add(new Coor(c.getX() - 1, c.getY()));
@@ -50,6 +51,34 @@ public class Coor {
 
     public static Coor getCenterCoor(Coor coor1, Coor coor2) {
         return new Coor((coor1.getX() + coor2.getX())/2, (coor1.getY() + coor2.getY())/2);
+    }
+
+    // Needs reworking
+    public static List<Coor> getDiagonalCoors(Coor coor) {
+        int x = coor.getX();
+        int y = coor.getY();
+        List<Coor> results = new ArrayList<>();
+        if (x + 1 < Params.MAX_ROW && y + 1 < Params.MAX_COL) {
+            results.add(new Coor(x + 1, y + 1));
+        }
+        if (x - 1 >= 0 && y - 1 >= 0) {
+            results.add(new Coor(x - 1, y - 1));
+        }
+        if (x + 1 < Params.MAX_ROW && y - 1 >= 0) {
+            results.add(new Coor(x + 1, y - 1));
+        }
+        if (x - 1 >= 0 && y + 1 < Params.MAX_COL) {
+            results.add(new Coor(x - 1, y + 1));
+        }
+        return results;
+    }
+
+    public static List<Pair<Coor, Coor>> getDiagonalCoorPairs(Coor coor) {
+        int x = coor.getX();
+        int y = coor.getY();
+        List<Pair<Coor, Coor>> results = new ArrayList<>();
+
+        if (x + 2)
     }
 
     /**
