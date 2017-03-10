@@ -1,10 +1,11 @@
 /**
  * Created by Riwaz on 3/10/17.
  */
-public class BlackKingPiece extends RedPiece {
+public class BlackKingPiece extends BlackPiece {
 
-    public BlackKingPiece(RedPiece piece) {
+    public BlackKingPiece(BlackPiece piece) {
         super(piece.board, piece);
+        super.makeKing();
     }
 
     @Override

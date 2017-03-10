@@ -5,6 +5,7 @@ public class RedKingPiece extends RedPiece {
 
     public RedKingPiece(RedPiece piece) {
         super(piece.board, piece);
+        super.makeKing();
     }
 
     @Override

@@ -21,7 +21,7 @@ public abstract class Piece implements PieceInterface {
         }
     }
 
-    public void makeKing() {
+    protected void makeKing() {
         this.isKing = true;
     }
 

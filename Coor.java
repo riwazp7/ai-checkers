@@ -43,7 +43,8 @@ public class Coor {
 
     // returns true iff coor1 is diagonal to coor2 and they are adjacent (no another diagonal coor)
     public static boolean isDiagonalTo(Coor coor1, Coor coor2) {
-        if ((java.lang.Math.abs(coor1.getX() - coor2.getX()) == 1) && (java.lang.Math.abs(coor1.getY() - coor2.getY()) == 1)) {
+        if ((java.lang.Math.abs(coor1.getX() - coor2.getX()) == 1)
+                && (java.lang.Math.abs(coor1.getY() - coor2.getY()) == 1)) {
             return true;
         }
         return false;
@@ -72,7 +73,37 @@ public class Coor {
         }
         return results;
     }
-    
+
+    public static List<Coor> getRedForwardCoors(Coor coor) {
+        List<Coor> results = new ArrayList<>();
+        if (coor.getX() - 1 >= 0 && coor.getY() - 1 >= 0) {
+            results.add(new Coor(coor.getX() - 1, coor.getY() - 1));
+        }
+        if (coor.getX() - 1 >= 0 && coor.getY() + 1 < Params.MAX_COL) {
+            results.add(new Coor(coor.getX() - 1, coor.getY() + 1));
+        }
+        return results;
+    }
+
+    public static List<Coor> getBlackForwardCoors(Coor coor) {
+        List<Coor> results = new ArrayList<>();
+        if (coor.getX() + 1 < Params.MAX_ROW && coor.getY() - 1 >= 0) {
+            results.add(new Coor(coor.getX() + 1, coor.getY() - 1));
+        }
+        if (coor.getX() + 1 < Params.MAX_ROW && coor.getY() + 1 < Params.MAX_COL) {
+            results.add(new Coor(coor.getX() + 1, coor.getY() + 1));
+        }
+        return results;
+    }
+
+    public static List<Coor> getRedBackwardCoors(Coor coor) {
+        return getBlackForwardCoors(coor);
+    }
+
+    public static List<Coor> getBlackBackwardCoors(Coor coor) {
+        return getRedForwardCoors(coor);
+    }
+
 
     /**
      *

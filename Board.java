@@ -7,19 +7,19 @@ import java.util.List;
 public class Board implements BoardInterface {
 
     Piece[][] boardArr = new Piece[Params.MAX_ROW][Params.MAX_COL];
-    List<Piece> redPieces = new ArrayList<>();
-    List<Piece> blackPieces = new ArrayList<>();
+    List<RedPiece> redPieces = new ArrayList<>();
+    List<BlackPiece> blackPieces = new ArrayList<>();
     boolean redsTurn;
 
     public Board(Board board) {
-        for (Piece piece : board.getRedPieces()) {
-            Piece newPiece = new Piece(this, piece);
+        for (RedPiece piece : board.getRedPieces()) {
+            RedPiece newPiece = new RedPiece(this, piece);
             redPieces.add(newPiece);
             boardArr[piece.getCoor().getX()][piece.getCoor().getY()] = newPiece;
         }
 
-        for (Piece piece : board.getBlackPieces()) {
-            Piece newPiece = new Piece(this, piece);
+        for (BlackPiece piece : board.getBlackPieces()) {
+            BlackPiece newPiece = new BlackPiece(this, piece);
             blackPieces.add(newPiece);
             boardArr[piece.getCoor().getX()][piece.getCoor().getY()] = newPiece;
         }
@@ -43,8 +43,8 @@ public class Board implements BoardInterface {
 
     public void addPiece(Coor coor, Piece piece) {
         boardArr[coor.getX()][coor.getY()] = piece;
-        if (piece instanceof RedPiece) redPieces.add(piece);
-        else blackPieces.add(piece);
+        if (piece instanceof RedPiece || piece instanceof RedKingPiece) redPieces.add((RedPiece) piece);
+        else blackPieces.add((BlackPiece) piece);
     }
 
     public void changeTurn() {
@@ -60,11 +60,11 @@ public class Board implements BoardInterface {
         return boardArr;
     }
 
-    public List<Piece> getRedPieces() {
+    public List<RedPiece> getRedPieces() {
         return this.redPieces;
     }
 
-    public List<Piece> getBlackPieces() {
+    public List<BlackPiece> getBlackPieces() {
         return this.blackPieces;
     }
 
