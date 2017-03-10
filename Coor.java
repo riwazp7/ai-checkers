@@ -104,6 +104,43 @@ public class Coor {
         return getRedForwardCoors(coor);
     }
 
+    public static List<Pair<Coor, Coor>> getTwoRedForwardCoors(Coor coor) {
+        List<Pair<Coor, Coor>> results = new ArrayList<>();
+        if (coor.getX() - 2 >= 0 && coor.getY() - 2 >= 0) {
+            Coor coor1 = new Coor(coor.getX() - 1, coor.getY() - 1);
+            Coor coor2 = new Coor(coor.getX() - 2, coor.getY() - 2);
+            results.add(new Pair<>(coor1, coor2));
+        }
+        if (coor.getX() - 2 >= 0 && coor.getY() + 2 < Params.MAX_COL) {
+            Coor coor1 = new Coor(coor.getX() - 1, coor.getY() + 1);
+            Coor coor2 = new Coor(coor.getX() - 2, coor.getY() + 2);
+            results.add(new Pair<>(coor1, coor2));
+        }
+        return results;
+    }
+
+    public static List<Pair<Coor, Coor>> getTwoBlackForwardCoors(Coor coor) {
+        List<Pair<Coor, Coor>> results = new ArrayList<>();
+        if (coor.getX() + 2 < Params.MAX_ROW && coor.getY() - 2 >= 0) {
+            Coor coor1 = new Coor(coor.getX() + 1, coor.getY() - 1);
+            Coor coor2 = new Coor(coor.getX() + 2, coor.getY() - 2);
+            results.add(new Pair<>(coor1, coor2));
+        }
+        if (coor.getX() + 2 < Params.MAX_ROW && coor.getY() + 2 < Params.MAX_COL) {
+            Coor coor1 = new Coor(coor.getX() + 1, coor.getY() + 1);
+            Coor coor2 = new Coor(coor.getX() + 2, coor.getY() + 2);
+            results.add(new Pair<>(coor1, coor2));
+        }
+        return results;
+    }
+
+    public static List<Pair<Coor, Coor>> getTwoBlackBackwardCoors(Coor coor) {
+        return getTwoRedForwardCoors(coor);
+    }
+
+    public static List<Pair<Coor, Coor>> getTwoRedBackwardCoors(Coor coor) {
+        return getTwoBlackForwardCoors(coor);
+    }
 
     /**
      *
