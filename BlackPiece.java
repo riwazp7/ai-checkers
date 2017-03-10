@@ -7,4 +7,9 @@ public class BlackPiece extends Piece {
         super(board, blackPiece);
         isRed = false;
     }
+
+    @Override
+    public boolean hasToMove() {
+        return false;
+    }
 }

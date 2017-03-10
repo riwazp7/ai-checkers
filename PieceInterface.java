@@ -4,4 +4,6 @@
 public interface PieceInterface {
     int x = -1;
     int y = -1;
+
+    boolean hasToMove();
 }

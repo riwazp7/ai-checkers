@@ -7,4 +7,8 @@ public class RedPiece extends Piece {
         super(board, redPiece);
         isRed = true;
     }
+
+    public boolean hasToMove() {
+        return false;
+    }
 }

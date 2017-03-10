@@ -1,7 +1,7 @@
 /**
  * Created by Riwaz on 2/16/17.
  */
-public class Piece implements PieceInterface {
+public abstract class Piece implements PieceInterface {
 
     protected Board board;
     protected Coor coor;
@@ -37,7 +37,5 @@ public class Piece implements PieceInterface {
         return this.board;
     }
 
-    public boolean hasToMove() {
-
-    }
+    abstract public boolean hasToMove();
 }

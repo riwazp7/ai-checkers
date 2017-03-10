@@ -72,14 +72,7 @@ public class Coor {
         }
         return results;
     }
-
-    public static List<Pair<Coor, Coor>> getDiagonalCoorPairs(Coor coor) {
-        int x = coor.getX();
-        int y = coor.getY();
-        List<Pair<Coor, Coor>> results = new ArrayList<>();
-
-        if (x + 2)
-    }
+    
 
     /**
      *
