@@ -56,8 +56,8 @@ public class Board implements BoardInterface {
         return null;
     }
 
-    public Piece[][] getBoardArr() {
-        return boardArr;
+    public Piece getPieceAt(Coor coor) {
+        return boardArr[coor.getX()][coor.getY()];
     }
 
     public List<RedPiece> getRedPieces() {

@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Created by Riwaz on 3/10/17.
  */
@@ -13,7 +15,14 @@ public class RedKingPiece extends RedPiece {
         if (super.hasToMove()) {
             return true;
         }
+        List<Pair<Coor, Coor>> coors = Coor.getTwoRedBackwardCoors(this.coor);
+        for (Pair<Coor, Coor> pair : coors) {
+            if (board.getPieceAt(pair.x) instanceof BlackPiece || board.getPieceAt(pair.x) instanceof BlackKingPiece) {
+                if (board.getPieceAt(pair.y) == null) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
-
 }
