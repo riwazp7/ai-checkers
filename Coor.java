@@ -53,27 +53,7 @@ public class Coor {
     public static Coor getCenterCoor(Coor coor1, Coor coor2) {
         return new Coor((coor1.getX() + coor2.getX())/2, (coor1.getY() + coor2.getY())/2);
     }
-
-    // Needs reworking
-    public static List<Coor> getDiagonalCoors(Coor coor) {
-        int x = coor.getX();
-        int y = coor.getY();
-        List<Coor> results = new ArrayList<>();
-        if (x + 1 < Params.MAX_ROW && y + 1 < Params.MAX_COL) {
-            results.add(new Coor(x + 1, y + 1));
-        }
-        if (x - 1 >= 0 && y - 1 >= 0) {
-            results.add(new Coor(x - 1, y - 1));
-        }
-        if (x + 1 < Params.MAX_ROW && y - 1 >= 0) {
-            results.add(new Coor(x + 1, y - 1));
-        }
-        if (x - 1 >= 0 && y + 1 < Params.MAX_COL) {
-            results.add(new Coor(x - 1, y + 1));
-        }
-        return results;
-    }
-
+    
     public static List<Coor> getRedForwardCoors(Coor coor) {
         List<Coor> results = new ArrayList<>();
         if (coor.getX() - 1 >= 0 && coor.getY() - 1 >= 0) {

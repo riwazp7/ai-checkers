@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Created by Riwaz on 2/16/17.
  */
@@ -37,5 +39,9 @@ public abstract class Piece implements PieceInterface {
         return this.board;
     }
 
+    @Override
     abstract public boolean hasToMove();
+
+    @Override
+    abstract public List<Move> getPossibleMoves();
 }

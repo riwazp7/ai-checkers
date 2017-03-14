@@ -26,4 +26,9 @@ public class BlackKingPiece extends BlackPiece {
         return false;
     }
 
+    @Override
+    public List<Move> getPossibleMoves() {
+        return null;
+    }
+
 }

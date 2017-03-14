@@ -21,4 +21,9 @@ public class RedPiece extends Piece {
         }
         return false;
     }
+
+    @Override
+    public List<Move> getPossibleMoves() {
+        return null;
+    }
 }
