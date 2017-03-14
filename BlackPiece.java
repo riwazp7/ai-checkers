@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by Riwaz on 2/17/17.
@@ -29,6 +30,14 @@ public class BlackPiece extends Piece {
         List<Move> result = new ArrayList<>();
         List<Pair<Coor, Coor>> coors = Coor.getTwoBlackForwardCoors(coor);
         if (hasToMove()) {
+            Stack<Pair<Coor, Coor>> stack = new Stack();
+            for (Pair<Coor, Coor> pair : coors) {
+                stack.push(pair);
+            }
+            while (stack.size() > 0) {
+                Pair<Coor, Coor> pair = stack.pop();
+                // jk doesn't work need to track path
+            }
 
         } else {
             // simple case :)
