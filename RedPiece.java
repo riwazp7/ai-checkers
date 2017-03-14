@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -24,6 +26,18 @@ public class RedPiece extends Piece {
 
     @Override
     public List<Move> getPossibleMoves() {
-        return null;
+        List<Move> result = new ArrayList<>();
+        List<Pair<Coor, Coor>> coors = Coor.getTwoRedForwardCoors(coor);
+        if (hasToMove()) {
+
+        } else {
+            // simple case :)
+            for (Pair<Coor, Coor> pair : coors) {
+                if (board.getPieceAt(pair.x) == null) {
+                    result.add(new Move(pair.x, this));
+                }
+            }
+        }
+        return result;
     }
 }

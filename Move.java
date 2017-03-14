@@ -6,13 +6,18 @@ import java.util.LinkedList;
 public class Move {
 
     int pos;
-    LinkedList<Coor> coors;
+    LinkedList<Coor> coors = new LinkedList<>();
     Piece piece;
 
     public Move(LinkedList<Coor> coors, Piece piece) {
         this.coors = coors;
         this.piece = piece;
         reset();
+    }
+
+    public Move(Coor coor, Piece piece) {
+        coors.add(coor);
+        this.piece = piece;
     }
 
     public void reset() {

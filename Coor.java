@@ -53,7 +53,7 @@ public class Coor {
     public static Coor getCenterCoor(Coor coor1, Coor coor2) {
         return new Coor((coor1.getX() + coor2.getX())/2, (coor1.getY() + coor2.getY())/2);
     }
-    
+
     public static List<Coor> getRedForwardCoors(Coor coor) {
         List<Coor> results = new ArrayList<>();
         if (coor.getX() - 1 >= 0 && coor.getY() - 1 >= 0) {

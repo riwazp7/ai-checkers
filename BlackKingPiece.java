@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +29,9 @@ public class BlackKingPiece extends BlackPiece {
 
     @Override
     public List<Move> getPossibleMoves() {
-        return null;
+        List<Move> results = new ArrayList<>();
+        results.addAll(super.getPossibleMoves());
+        return results;
     }
 
 }

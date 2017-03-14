@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,6 +26,18 @@ public class BlackPiece extends Piece {
 
     @Override
     public List<Move> getPossibleMoves() {
-        return null;
+        List<Move> result = new ArrayList<>();
+        List<Pair<Coor, Coor>> coors = Coor.getTwoBlackForwardCoors(coor);
+        if (hasToMove()) {
+
+        } else {
+            // simple case :)
+            for (Pair<Coor, Coor> pair : coors) {
+                if (board.getPieceAt(pair.x) == null) {
+                    result.add(new Move(pair.x, this));
+                }
+            }
+        }
+        return result;
     }
 }
