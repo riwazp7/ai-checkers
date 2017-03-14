@@ -76,6 +76,21 @@ public class Board implements BoardInterface {
         return null;
     }
 
+    public boolean hasToMove() {
+        for (RedPiece redPiece : redPieces) {
+            if (redPiece.hasToMove())
+                return true;
+        }
+
+        for (BlackPiece blackPiece : blackPieces) {
+            if (blackPiece.hasToMove()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     @Override
     public String toString() {
         String res = "";
